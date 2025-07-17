@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squid Game: Red Light Green Light</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas"></canvas>
+        <video id="webcam" autoplay muted playsinline></video>
+        <canvas id="poseCanvas"></canvas>
+        
+        <div id="ui">
+            <div id="instructions">
+                <h2>Red Light, Green Light</h2>
+                <p>Move your arms and legs to run forward</p>
+                <p>Stop moving when the doll turns around!</p>
+                <button id="startButton">Start Game</button>
+            </div>
+            
+            <div id="gameInfo" style="display: none;">
+                <div id="status">Waiting...</div>
+                <div id="distance">Distance: 0m</div>
+                <div id="speed">Speed: 0</div>
+            </div>
+        </div>
+    </div>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://esm.sh/three@0.158.0",
+            "three/addons/": "https://esm.sh/three@0.158.0/examples/jsm/",
+            "@mediapipe/pose": "https://esm.sh/@mediapipe/pose@0.5.1675469404",
+            "@mediapipe/camera_utils": "https://esm.sh/@mediapipe/camera_utils@0.3.1675469404",
+            "cannon-es": "https://esm.sh/cannon-es@0.20.0"
+        }
+    }
+    </script>
+    
+    <script src="audio.js"></script>
+    <script src="bodyDetection.js"></script>
+    <script src="gameState.js"></script>
+    <script src="doll.js"></script>
+    <script src="player.js"></script>
+    <script src="main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
